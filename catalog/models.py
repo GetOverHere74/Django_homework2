@@ -19,6 +19,7 @@ class Product(models.Model):
         **NULLABLE,
     )
     product_category = models.ForeignKey(
+        'Category',
         on_delete=models.SET_NULL,
         verbose_name="Категория",
         **NULLABLE,
