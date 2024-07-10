@@ -28,7 +28,7 @@ class Product(models.Model):
     price = models.ImageField(
         max_length=10, verbose_name="Цена за покупку", help_text="Введите цену"
     )
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    manufactured_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата производства продукта")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
-        ordering = ["-created_at"]
+        ordering = ["manufactured_at"]
 
 
 class Category(models.Model):
