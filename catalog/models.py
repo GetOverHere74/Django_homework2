@@ -25,10 +25,10 @@ class Product(models.Model):
         **NULLABLE,
         related_name="products",
     )
-    price = models.ImageField(
-        max_length=10, verbose_name="Цена за покупку", help_text="Введите цену"
+    price = models.IntegerField(
+        verbose_name="Цена за покупку", help_text="Введите цену"
     )
-    manufactured_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата производства продукта")
+    manufactured_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")
 
     def __str__(self):
