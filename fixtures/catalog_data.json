@@ -1,0 +1,70 @@
+[
+  {
+    "model":"catalog.product",
+    "pk":3,
+    "fields":{
+      "name":"Телевизор",
+      "description":"",
+      "image":"",
+      "product_category":1,
+      "price":100000,
+      "manufactured_at":"2024-07-10T14:17:14.068Z",
+      "updated_at":"2024-07-10T14:17:14.068Z"
+    }
+  },
+  {
+    "model":"catalog.product",
+    "pk":4,
+    "fields":{
+      "name":"Смартфон",
+      "description":null,
+      "image":"",
+      "product_category":1,
+      "price":10000,
+      "manufactured_at":"2024-07-10T18:39:49.297Z",
+      "updated_at":"2024-07-10T18:39:49.297Z"
+    }
+  },
+  {
+    "model":"catalog.product",
+    "pk":5,
+    "fields":{
+      "name":"Робот-пылесос",
+      "description":null,
+      "image":"",
+      "product_category":2,
+      "price":30000,
+      "manufactured_at":"2024-07-10T18:40:52.703Z",
+      "updated_at":"2024-07-10T18:40:52.703Z"
+    }
+  },
+  {
+    "model":"catalog.product",
+    "pk":6,
+    "fields":{
+      "name":"Карта памяти",
+      "description":"Обьем 128GB",
+      "image":"",
+      "product_category":null,
+      "price":1000,
+      "manufactured_at":"2024-07-10T18:44:43.503Z",
+      "updated_at":"2024-07-10T18:44:43.503Z"
+    }
+  },
+  {
+    "model":"catalog.category",
+    "pk":1,
+    "fields":{
+      "name":"Электроника",
+      "category_description":"Электроника и смартфоны"
+    }
+  },
+  {
+    "model":"catalog.category",
+    "pk":2,
+    "fields":{
+      "name":"Пылесосы",
+      "category_description":"Бытовая техника"
+    }
+  }
+]
