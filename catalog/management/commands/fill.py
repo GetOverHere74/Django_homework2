@@ -33,16 +33,16 @@ class Command(BaseCommand):
             for c in info_python:
                 if c['model'] == 'catalog.product':
                     fields = c['fields']
-                    if 'category' in fields:
+                    if 'catalog.category' in fields:
                         i = {
                             'pk': pk_,
                             'name': fields['name'],
                             'description': fields['description'],
                             'image': fields['image'],
                             'price': fields['price'],
-                            'manufactured_at': fields['manufactured_at'],
+                            'created_at': fields['created_at'],
                             'updated_at': fields['updated_at'],
-                            'category': Category.objects.get(pk=fields['category'])
+                            'catalog.category': Category.objects.get(pk=fields['catalog.category'])
                         }
                         pk_ += 1
                         product_fill.append(Product(**i))
