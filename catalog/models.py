@@ -13,9 +13,9 @@ class Product(models.Model):
         verbose_name="Описание", help_text="Введите описание товара", **NULLABLE
     )
     image = models.ImageField(
-        upload_to="product/",
+        upload_to="media/product/",
         verbose_name="Изображение товара",
-        height_field="Загрузите фото товара",
+        help_text="Загрузите фото товара",
         **NULLABLE,
     )
     product_category = models.ForeignKey(
@@ -25,10 +25,10 @@ class Product(models.Model):
         **NULLABLE,
         related_name="products",
     )
-    price = models.IntegerField(
+    price = models.PositiveIntegerField(
         verbose_name="Цена за покупку", help_text="Введите цену"
     )
-    manufactured_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
-        ordering = ["manufactured_at"]
+        ordering = ["created_at"]
 
 
 class Category(models.Model):
@@ -45,7 +45,7 @@ class Category(models.Model):
     name = models.CharField(
         max_length=100, verbose_name="Категория", help_text="Введите название категории"
     )
-    category_description = models.TextField(
+    description = models.TextField(
         verbose_name="Описание категории",
         help_text="Введите описание категории",
         **NULLABLE,
