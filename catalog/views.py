@@ -21,13 +21,13 @@ class ProductDetailView(DetailView):
 
 class ProductCreateView(CreateView):
     model = Product
-    fields = ('name', 'product_description', 'image', 'category', 'price', 'created_at', 'updated_at')
+    fields = ('name', 'description', 'image', 'price')
     success_url = reverse_lazy('catalog:product_list')
 
 
 class ProductUpdateView(UpdateView):
     model = Product
-    fields = ('name', 'product_description', 'image', 'category', 'price', 'created_at', 'updated_at')
+    fields = ('name', 'description', 'image', 'price')
     success_url = reverse_lazy('catalog:product_list')
 
     def get_success_url(self):
