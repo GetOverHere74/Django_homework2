@@ -1,8 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
-from django.utils.text import slugify
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-
+from pytils.translit import slugify
 from blog.models import BlogPost
 
 
