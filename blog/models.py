@@ -14,8 +14,7 @@ class BlogPost(models.Model):
         unique=True,
         blank=True,
     )
-    content = models.CharField(
-        max_length=1000,
+    content = models.TextField(
         verbose_name="Содержимое",
         help_text="Введите текст",
     )
@@ -26,7 +25,7 @@ class BlogPost(models.Model):
         verbose_name="Фото",
         help_text="Загрузите фото"
     )
-    created_at = models.DateField(
+    created_at = models.DateTimeField(
         verbose_name="Дата создания", auto_now_add=True,
     )
     is_published = models.BooleanField(
