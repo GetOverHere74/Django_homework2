@@ -16,4 +16,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Version)
 class VersionAdmin(admin.ModelAdmin):
-    list_display = ('v_num', 'v_name')
+    list_display = ('v_num', 'v_name', 'curr_v')
