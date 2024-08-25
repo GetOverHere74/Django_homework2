@@ -37,6 +37,9 @@ class Product(models.Model):
         **NULLABLE,
         verbose_name="Владелец",
     )
+    is_published = models.BooleanField(
+        default=False, verbose_name="Опубликовано", help_text="Опубликовать продукт"
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата изменения")
 
@@ -47,6 +50,11 @@ class Product(models.Model):
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
         ordering = ["created_at"]
+        permissions = [
+            ("can_cancel_publication", "Can cancel publication of product"),
+            ("can_change_description", "Can change description of product"),
+            ("can_change_product_category", "Can change product category"),
+        ]
 
 
 class Category(models.Model):
