@@ -36,7 +36,17 @@ class ProductForm(ModelForm):
         return product_description
 
 
-class VersionForm(ModelForm):
+class VersionForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Version
         fields = '__all__'
+
+
+class ProductModeratorForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Product
+        fields = (
+            "is_published",
+            "description",
+            "product_category",
+        )
